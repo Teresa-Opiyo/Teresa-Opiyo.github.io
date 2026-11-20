@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teresa Akumu Opiyo | Dashboard Portfolio</title>
+<meta name="description" content="Sample interactive dashboards, maps and heat maps built on open data by Teresa Akumu Opiyo.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Teresa Akumu Opiyo</h1>
+      <p>Project management professional | Dashboards, maps and data storytelling</p>
+    </div>
+    <nav id="tabs" aria-label="Dashboards">
+      <button data-tab="about" class="active">About</button>
+      <button data-tab="ai">AI Adoption in Europe</button>
+      <button data-tab="map">World Health and Income</button>
+      <button data-tab="trends">Life Expectancy Trends</button>
+      <button data-tab="heat">Weather Heat Map</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="about" class="panel active">
+    <h2>Interactive dashboards built on open data</h2>
+    <p class="lead">These four sample dashboards show how I turn raw data into clear, interactive views for decision makers: line, bar, donut and scatter charts, interactive maps and heat maps. They use public datasets only, never client or employer data.</p>
+    <div class="cards">
+      <article class="card" data-go="ai"><span class="tag">Current</span><h3>AI Adoption in Europe</h3><p>How fast businesses and people in Europe are adopting AI, using Eurostat figures from 2025.</p></article>
+      <article class="card" data-go="map"><h3>World Health and Income</h3><p>Interactive map linked to a bubble chart. Filter by region, switch the metric and compare countries.</p></article>
+      <article class="card" data-go="trends"><h3>Life Expectancy Trends</h3><p>Pick countries and compare life expectancy and fertility from 1955 to 2005.</p></article>
+      <article class="card" data-go="heat"><h3>Weather Heat Map</h3><p>Calendar and monthly heat maps that reveal patterns in daily temperature and rainfall.</p></article>
+    </div>
+    <h3>What I build for clients and teams</h3>
+    <ul class="list">
+      <li>Interactive Power BI dashboards, including maps and heat maps</li>
+      <li>Excel dashboards with pivot tables that refresh automatically when new data is added</li>
+      <li>Training for teams to build their own dashboards and to use AI tools for reports and presentations</li>
+    </ul>
+    <p class="contact">Contact: <a href="mailto:tessaakumu@yahoo.com">tessaakumu@yahoo.com</a> | GitHub: <a href="https://github.com/Teresa-Opiyo" target="_blank" rel="noopener">github.com/Teresa-Opiyo</a></p>
+    <p class="note">Data sources: Eurostat (AI adoption, 2025), Gapminder (via the Vega Datasets collection) and the Seattle weather dataset (Vega Datasets). Country outlines: Natural Earth via World Atlas. These samples are built with open source web tools so they can be viewed in any browser.</p>
+  </section>
+
+  <section id="ai" class="panel">
+    <h2>AI Adoption in Europe</h2>
+    <p class="lead">How quickly are businesses and people in Europe adopting AI? Official Eurostat figures for 2025, with switchable views.</p>
+    <div class="kpis kpis-hero" id="kpisAI"></div>
+    <div class="grid2">
+      <figure><h3 class="ft">EU businesses using AI</h3><div id="aiTrend" class="chart"></div><figcaption>Share of enterprises with 10 or more employees. Survey years shown: 2021, 2023, 2024, 2025.</figcaption></figure>
+      <figure><h3 class="ft">Country comparison</h3>
+        <div class="seg small" id="aiBarSeg"><button data-v="ent" class="active">Businesses 2025</button><button data-v="grow">Growth 2024 to 2025</button><button data-v="ind">People 2025</button></div>
+        <div id="aiBar" class="chart"></div><figcaption id="aiBarCap"></figcaption></figure>
+    </div>
+    <div class="grid2">
+      <figure><h3 class="ft">Which AI technologies businesses use</h3><div id="aiTech" class="chart"></div><figcaption>Share of EU enterprises using each technology, 2025.</figcaption></figure>
+      <figure><h3 class="ft">Why people do not use generative AI</h3><div id="aiDonut" class="chart"></div><figcaption>Main reason given by EU individuals who do not use generative AI, 2025. The remainder is other reasons or not stated.</figcaption></figure>
+    </div>
+    <div class="grid2">
+      <figure><h3 class="ft">Who uses generative AI</h3>
+        <div class="seg small" id="aiGrpSeg"><button data-g="Age" class="active">Age</button><button data-g="Education">Education</button><button data-g="Gender">Gender</button></div>
+        <div id="aiGroup" class="chart"></div><figcaption>Share of EU individuals aged 16 to 74 using generative AI tools, 2025.</figcaption></figure>
+      <figure><h3 class="ft">Businesses versus people</h3><div id="aiCompare" class="chart"></div><figcaption>Countries with both measures available: businesses using AI and individuals using generative AI, 2025.</figcaption></figure>
+    </div>
+    <div class="insights">
+      <h3>What the data shows</h3>
+      <ul id="aiInsights"></ul>
+    </div>
+    <p class="note">Sources: Eurostat, <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2" target="_blank" rel="noopener">"20% of EU enterprises use AI technologies"</a> (dataset isoc_eb_ai, December 2025) for businesses; Eurostat Statistics Explained on <a href="https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/145512.pdf" target="_blank" rel="noopener">individuals' use of generative AI</a> (datasets isoc_ai_iaiu and isoc_ai_iaiuxr, 2025). Only the figures published in those releases are shown, so country charts list selected countries rather than all member states.</p>
+  </section>
+
+  <section id="map" class="panel">
+    <h2>World Health and Income</h2>
+    <p class="lead">Life expectancy and income per person for 187 countries. Choose a metric, filter by region and hover or click a country.</p>
+    <div class="controls">
+      <div class="seg" id="metric"><button data-m="health" class="active">Life expectancy</button><button data-m="income">Income per person</button></div>
+      <div class="chips" id="regions"></div>
+    </div>
+    <div class="kpis" id="kpis1"></div>
+    <div class="grid2">
+      <figure><div id="mapchart" class="chart"></div><figcaption>Map: darker means higher. Grey countries have no data in this dataset.</figcaption></figure>
+      <figure><div id="scatter" class="chart"></div><figcaption>Each bubble is a country. Size shows population, colour shows region.</figcaption></figure>
+    </div>
+    <div class="grid2">
+      <figure><h3 class="ft">Population by region</h3><div id="regDonut" class="chart"></div><figcaption>Share of the dataset's total population. Regions you switch off are greyed out.</figcaption></figure>
+      <figure><h3 class="ft">Median life expectancy by region</h3><div id="regBar" class="chart"></div><figcaption>Years, median of countries in each region.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="trends" class="panel">
+    <h2>Life Expectancy Trends, 1955 to 2005</h2>
+    <p class="lead">Compare how life expectancy and fertility changed in up to six countries.</p>
+    <div class="controls">
+      <div class="seg" id="metric2"><button data-m="life_expect" class="active">Life expectancy</button><button data-m="fertility">Fertility rate</button></div>
+      <label class="pick">Add a country <select id="countrySel"></select></label>
+      <div class="chips" id="selected"></div>
+    </div>
+    <div class="kpis" id="kpis2"></div>
+    <figure><div id="lines" class="chart tall"></div><figcaption>Lines show the value every five years. Hover for exact figures.</figcaption></figure>
+  </section>
+
+  <section id="heat" class="panel">
+    <h2>Weather Heat Map</h2>
+    <p class="lead">Daily weather for Seattle, 2012 to 2015, as a calendar heat map and a month by year summary.</p>
+    <div class="controls">
+      <div class="seg" id="metric3"><button data-m="temp_max" class="active">High temperature</button><button data-m="precipitation">Rainfall</button></div>
+      <label class="pick">Year <select id="yearSel"></select></label>
+    </div>
+    <div class="kpis" id="kpis3"></div>
+    <figure><div id="calendar" class="chart"></div><figcaption>Each square is one day. Hover for the date and value.</figcaption></figure>
+    <figure><div id="monthyear" class="chart short"></div><figcaption>Monthly average across all four years.</figcaption></figure>
+  </section>
+</main>
+
+<footer class="wrap foot">Teresa Akumu Opiyo | Sample dashboards built with open data</footer>
+<div id="tip" class="tip" role="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
