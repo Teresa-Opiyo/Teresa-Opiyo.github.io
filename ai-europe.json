@@ -1,0 +1,25 @@
+{
+ "enterprise_trend":[{"label":"2021","v":7.7},{"label":"2023","v":8.1},{"label":"2024","v":13.5},{"label":"2025","v":20.0}],
+ "enterprise_2025":[
+  {"label":"Denmark","v":42.0},{"label":"Finland","v":37.8},{"label":"Sweden","v":35.0},{"label":"EU average","v":20.0,"eu":true},
+  {"label":"Bulgaria","v":8.5},{"label":"Poland","v":8.4},{"label":"Romania","v":5.2}],
+ "enterprise_growth":[{"label":"Denmark","v":14.5},{"label":"Finland","v":13.5},{"label":"Lithuania","v":12.5}],
+ "enterprise_tech":[
+  {"label":"Analysing written language","v":11.8},
+  {"label":"Generating pictures, video or audio","v":9.5},
+  {"label":"Generating written or spoken language","v":8.8},
+  {"label":"Converting speech to machine readable text","v":7.2}],
+ "individuals_2025":[
+  {"label":"Norway","v":56},{"label":"Denmark","v":48},{"label":"Estonia","v":47},{"label":"Malta","v":47},{"label":"Switzerland","v":47},
+  {"label":"Finland","v":46},{"label":"EU average","v":33,"eu":true},{"label":"Bulgaria","v":23},{"label":"Italy","v":20},{"label":"Romania","v":18}],
+ "groups":{
+  "Age":[{"label":"Age 16 to 24","v":64},{"label":"Age 65 to 74","v":7}],
+  "Education":[{"label":"High formal education","v":49},{"label":"Medium formal education","v":26},{"label":"Little or no formal education","v":22}],
+  "Gender":[{"label":"Men","v":35},{"label":"Women","v":30}]},
+ "reasons":[
+  {"label":"Did not feel the need","v":64},{"label":"Not sure how to use the tools","v":14},
+  {"label":"Not aware of them","v":9},{"label":"Privacy and security concerns","v":7}],
+ "compare":[
+  {"label":"Denmark","ent":42.0,"ind":48},{"label":"Finland","ent":37.8,"ind":46},
+  {"label":"Bulgaria","ent":8.5,"ind":23},{"label":"Romania","ent":5.2,"ind":18}]
+}
